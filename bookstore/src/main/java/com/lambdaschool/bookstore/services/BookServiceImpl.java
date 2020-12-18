@@ -87,8 +87,7 @@ public class BookServiceImpl
                 .clear();
         for (Wrote w : book.getWrotes())
         {
-            Author addAuthor = authorrepos.findById(w.getAuthor()
-                                                            .getAuthorid())
+            Author addAuthor = authorrepos.findById(w.getAuthor().getAuthorid())
                     .orElseThrow(() -> new ResourceNotFoundException("Author Id " + w.getAuthor()
                             .getAuthorid() + " Not Found!"));
             newBook.getWrotes()
